@@ -11,9 +11,11 @@
 |
 */
 
+use Illuminate\Foundation\Testing\DatabaseTruncation;
+
 pest()->extend(Tests\TestCase::class)
  // ->use(Illuminate\Foundation\Testing\RefreshDatabase::class)
-    ->in('Feature');
+    ->in('Feature','Console');
 
 /*
 |--------------------------------------------------------------------------
