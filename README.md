@@ -18,8 +18,8 @@ Simple Crud with simple logic based on Laravel/Blade and Sail.
 - Run the cron job `vendor/bin/sail artisan schedule:run` or locally `php artisan schedule:work` on production add command to cron.
 
 ## TODO 
-- [ ] Add helper (for the Models) 
-- [ ] Add Lint
+- [x] Add helper (for the Models) 
+- [x] Add Lint
 - [ ] Add GitHub actions for tests
 - [ ] Add translations
 - [ ] Add more types of users 
