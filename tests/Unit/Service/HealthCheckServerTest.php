@@ -4,7 +4,7 @@ namespace Tests\Unit\Service;
 
 use App\Service\HealthCheckServer;
 
-it(description: 'validates the proper server response', closure: function (string $ip, int $port, bool $expected) {
+it(description: 'validates the proper server response', closure: function (string $ip, int $port, bool $expected): void {
 
     // GIVEN
     $healthCheckServer = new HealthCheckServer();
@@ -22,7 +22,7 @@ it(description: 'validates the proper server response', closure: function (strin
     ],
     'not valid server response' => [
         '127.0.0.1',
-        8560,
+        8_560,
         false,
     ],
 ]);

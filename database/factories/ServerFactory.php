@@ -21,7 +21,7 @@ class ServerFactory extends Factory
             'id' => Str::ulid(),
             'name' => fake()->company(),
             'ip_address' => fake()->ipv4(),
-            'port' => fake()->numberBetween(int1: 1024, int2: 65535),
+            'port' => fake()->numberBetween(int1: 1_024, int2: 65_535),
             'status' => fake()->randomElement(array: ['online', 'offline']),
         ];
     }

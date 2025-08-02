@@ -9,10 +9,10 @@ use Symfony\Component\Console\Command\Command;
 
 uses(classAndTraits: RefreshDatabase::class);
 
-it(description: 'update status of server in DB', closure: function (string $ip, int $port, ServerStatus $initialStatus, ServerStatus $expectedStatus) {
+it(description: 'update status of server in DB', closure: function (string $ip, int $port, ServerStatus $initialStatus, ServerStatus $expectedStatus): void {
 
     // GIVEN
-    $id = "b9dcf793-85a1-45e9-9eeb";
+    $id = 'b9dcf793-85a1-45e9-9eeb';
 
     $server = Server::factory()->create([
         'id' => $id,
@@ -25,11 +25,11 @@ it(description: 'update status of server in DB', closure: function (string $ip, 
     // WHEN
     $this->artisan(command: 'app:server-status-command', parameters: [
         'ip' => $ip,
-        'port' => $port,])
+        'port' => $port, ])
 
     // THEN
-    ->expectsOutput(output: 'Server status updated successfully.')
-    ->assertExitCode(exitCode: Command::SUCCESS);
+        ->expectsOutput(output: 'Server status updated successfully.')
+        ->assertExitCode(exitCode: Command::SUCCESS);
 
     $this->assertDatabaseHas(table: 'servers', data: [
         'id' => $server->id,
@@ -39,7 +39,6 @@ it(description: 'update status of server in DB', closure: function (string $ip, 
     ]);
 
 })->with(data: [
-    'online' => ['mysql',3306,ServerStatus::OFFLINE,ServerStatus::ONLINE],
-    'offline' => ['127.0.0.1',45970,ServerStatus::ONLINE,ServerStatus::OFFLINE],
+    'online' => ['mysql', 3_306, ServerStatus::OFFLINE, ServerStatus::ONLINE],
+    'offline' => ['127.0.0.1', 45_970, ServerStatus::ONLINE, ServerStatus::OFFLINE],
 ]);
-

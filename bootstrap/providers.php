@@ -1,6 +1,9 @@
 <?php
 
+use App\Providers\AppServiceProvider;
+use App\Providers\Filament\LoginPanelProvider;
+
 return [
-    App\Providers\AppServiceProvider::class,
-    App\Providers\Filament\LoginPanelProvider::class,
+    AppServiceProvider::class,
+    LoginPanelProvider::class,
 ];
