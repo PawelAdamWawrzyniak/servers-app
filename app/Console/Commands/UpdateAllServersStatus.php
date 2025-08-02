@@ -28,7 +28,7 @@ class UpdateAllServersStatus extends Command
      */
     public function handle(): int
     {
-        Server::all()->each(function (Server $server) {
+        Server::all()->each(function (Server $server): void {
             UpdateServerStatusJob::dispatch($server->ip_address, $server->port);
         });
 

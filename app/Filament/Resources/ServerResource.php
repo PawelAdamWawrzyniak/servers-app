@@ -14,7 +14,6 @@ use Filament\Tables\Table;
 class ServerResource extends Resource
 {
     protected static ?string $model = Server::class;
-
     protected static ?string $navigationIcon = 'heroicon-o-server-stack';
 
     public static function form(Form $form): Form
@@ -23,14 +22,14 @@ class ServerResource extends Resource
             ->schema([
                 Forms\Components\TextInput::make(name: 'name')
                     ->required()
-                    ->maxLength(length:100),
+                    ->maxLength(length: 100),
                 Forms\Components\TextInput::make(name: 'ip_address')
                     ->required()
                     ->ipv4(),
                 Forms\Components\TextInput::make(name: 'port')
                     ->required()
                     ->numeric()
-                    ->maxValue(value:65535),
+                    ->maxValue(value: 65_535),
                 Forms\Components\Select::make(name: 'status')
                     ->options(options: ServerStatus::class)
                     ->disabled(),
@@ -62,7 +61,7 @@ class ServerResource extends Resource
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
-                //
+
             ])
             ->actions([
                 Tables\Actions\ViewAction::make(),
@@ -79,17 +78,17 @@ class ServerResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+
         ];
     }
 
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListServers::route(path:'/'),
-            'create' => Pages\CreateServer::route(path:'/create'),
-            'view' => Pages\ViewServer::route(path:'/{record}'),
-            'edit' => Pages\EditServer::route(path:'/{record}/edit'),
+            'index' => Pages\ListServers::route(path: '/'),
+            'create' => Pages\CreateServer::route(path: '/create'),
+            'view' => Pages\ViewServer::route(path: '/{record}'),
+            'edit' => Pages\EditServer::route(path: '/{record}/edit'),
         ];
     }
 }

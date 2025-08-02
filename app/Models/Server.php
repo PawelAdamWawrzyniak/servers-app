@@ -12,14 +12,15 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Carbon;
 
 /**
- * @property string $id
- * @property string $name
- * @property string $ip_address
- * @property string $port
+ * @property string            $id
+ * @property string            $name
+ * @property string            $ip_address
+ * @property string            $port
  * @property ServerStatus|null $status
- * @property Carbon|null $created_at
- * @property Carbon|null $updated_at
- * @method static ServerFactory factory($count = null, $state = [])
+ * @property Carbon|null       $created_at
+ * @property Carbon|null       $updated_at
+ *
+ * @method static ServerFactory          factory($count = null, $state = [])
  * @method static Builder<static>|Server newModelQuery()
  * @method static Builder<static>|Server newQuery()
  * @method static Builder<static>|Server query()
@@ -30,12 +31,14 @@ use Illuminate\Support\Carbon;
  * @method static Builder<static>|Server wherePort($value)
  * @method static Builder<static>|Server whereStatus($value)
  * @method static Builder<static>|Server whereUpdatedAt($value)
+ *
  * @mixin Eloquent
  */
 class Server extends Model
 {
     /** @use HasFactory<ServerFactory> */
     use HasFactory;
+
     use HasUlids;
 
     /**

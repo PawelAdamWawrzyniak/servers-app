@@ -2,7 +2,6 @@
 
 namespace App\Jobs;
 
-use App\Console\Commands\UpdateServerStatusCommand;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Queue\Queueable;
 use Illuminate\Support\Facades\Artisan;
@@ -23,6 +22,6 @@ class UpdateServerStatusJob implements ShouldQueue
      */
     public function handle(): void
     {
-        Artisan::call(command: 'app:server-status-command',parameters: ['ip' => $this->ip, 'port' => $this->port]);
+        Artisan::call(command: 'app:server-status-command', parameters: ['ip' => $this->ip, 'port' => $this->port]);
     }
 }

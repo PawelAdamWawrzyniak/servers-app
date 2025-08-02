@@ -13,6 +13,7 @@ class HealthCheckServer
         }
 
         fclose($handle);
+
         return true;
     }
 }

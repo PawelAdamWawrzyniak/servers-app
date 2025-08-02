@@ -35,12 +35,12 @@ class LoginPanelProvider extends PanelProvider
             ->pages(pages: [
                 Pages\Dashboard::class,
             ])
-            ->discoverWidgets(in: app_path(path:'Filament/Widgets'), for: 'App\\Filament\\Widgets')
+            ->discoverWidgets(in: app_path(path: 'Filament/Widgets'), for: 'App\\Filament\\Widgets')
             ->widgets(widgets: [
                 Widgets\AccountWidget::class,
                 Widgets\FilamentInfoWidget::class,
             ])
-            ->middleware(middleware:[
+            ->middleware(middleware: [
                 EncryptCookies::class,
                 AddQueuedCookiesToResponse::class,
                 StartSession::class,
@@ -51,7 +51,7 @@ class LoginPanelProvider extends PanelProvider
                 DisableBladeIconComponents::class,
                 DispatchServingFilamentEvent::class,
             ])
-            ->authMiddleware(middleware:[
+            ->authMiddleware(middleware: [
                 Authenticate::class,
             ]);
     }

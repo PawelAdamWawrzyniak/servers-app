@@ -2,9 +2,9 @@
 
 namespace Database\Seeders;
 
+use App\Enums\ServerStatus;
 use App\Models\Server;
 use Illuminate\Database\Seeder;
-use App\Enums\ServerStatus;
 
 class ServerSeeder extends Seeder
 {
