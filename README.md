@@ -4,7 +4,7 @@ Simple Crud with simple logic based on Laravel/Blade and Sail.
 
 ## Features
 - [x] Crud for servers.
-- [ ] Cron jobs for checking the status of servers is done by sending a request to the server and checking the response.
+- [x] Cron jobs for checking the status of servers is done by sending a request to the server and checking the response.
 
 ## Run the Project
 
@@ -12,8 +12,16 @@ Simple Crud with simple logic based on Laravel/Blade and Sail.
 - Run the composer `composer install`
 - Run sail `vendor/bin/sail up -d`
 - Login to the [app](http://localhost) and the to admin panel [admin](http://localhost/admin)
+- Run the tests `vendor/bin/sail test`
+- Run the migrations `vendor/bin/sail artisan migrate`
+- Run the queue worker `artisan queue:work --sleep=3 --tries=3 --max-time=360`
+- Run the cron job `vendor/bin/sail artisan schedule:run` or locally `php artisan schedule:work` on production add command to cron.
 
 ## TODO 
+- [ ] Add helper (for the Models) 
+- [ ] Add Lint
+- [ ] Add GitHub actions for tests
 - [ ] Add translations
 - [ ] Add more types of users 
 - [ ] Add policies for Admin panel
+
