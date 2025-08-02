@@ -1,6 +1,8 @@
 ## Servers
 
 Simple Crud with simple logic based on Laravel/Blade and Sail.
+It's simple sandbox project to learn Laravel.
+Instead of making CRUD yourself I use FilamentPHP.
 
 ## Features
 - [x] Crud for servers.
