@@ -19,6 +19,8 @@ Simple Crud with simple logic based on Laravel/Blade and Sail.
 
 ## TODO 
 - [ ] Add helper (for the Models) 
+- [ ] Add Lint
+- [ ] Add GitHub actions for tests
 - [ ] Add translations
 - [ ] Add more types of users 
 - [ ] Add policies for Admin panel
